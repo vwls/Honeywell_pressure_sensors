@@ -5,10 +5,10 @@ This is a simple library for interacting with pressure sensors from Honeywell's 
 [I2C Technical Notes] (http://sensing.honeywell.com/i2c-comms-digital-output-pressure-sensors-tn-008201-3-en-final-30may12.pdf)
 
 SPI - SSCMLNN030PASA3
-I2C - 
+I2C -
 Analog -  
 
-Currently, this library only supports SPI, but I2C and Analog functionality is forthcoming!
+__Currently, this library only supports SPI, but I2C and Analog functionality is forthcoming!__
 
 ## Functions
 Here is a complete list of the functions that this library provides. 
