@@ -15,12 +15,17 @@ Here is a complete list of the functions that this library provides.
 ```cpp
 readPressure();
 readTemp();
+getStatus();
 ```
 
 ## Examples
 The following example programs demonstrate the functions of this library.  
 
 ```cpp
+/*
+Reading pressure from Honeywell TruStability pressure sensor SSCMLNN030PASA3   
+*/
+
 #include <Honeywell_pressure_sensors.h>
 
 Honeywell_pressure_sensors hps(1);
