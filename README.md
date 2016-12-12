@@ -6,13 +6,22 @@ Currently, this library only supports SPI, but I2C and Analog functionality is f
 ## Functions
 Here is a complete list of the functions that this library provides. 
 ```cpp
-int csPin = 1;
-void setup(){}
-void loop(){
-    readPressure(csPin);
-}
+readPressure();
 ```
 
 ## Examples
-The following are example programs that demonstrate the functions of this library.  
+The following example programs demonstrate the functions of this library.  
 
+```cpp
+#include Honeywell_pressure_sensors.h
+
+HPS = new hps(1)
+
+void setup(){
+
+}
+
+void loop(){
+    hps.readPressure();
+}
+```
