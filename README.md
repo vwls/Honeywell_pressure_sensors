@@ -1,11 +1,9 @@
 # Honeywell Pressure Sensors
 This is a light weight Arduino library for interacting with pressure sensors from Honeywell's TruStability Board Mount collection.
-[Collection Catalog] (http://sensing.honeywell.com/honeywell-sensing-trustability-ssc-series-standard-accuracy-board-mount-pressure-sensors-50099533-a-en.pdf)\n
-[SPI Technical Notes] (http://sensing.honeywell.com/spi-comms-digital-ouptu-pressure-sensors-tn-008202-3-en-final-30may12.pdf)\n
-[I2C Technical Notes] (http://sensing.honeywell.com/i2c-comms-digital-output-pressure-sensors-tn-008201-3-en-final-30may12.pdf)\n
-
-SPI - SSCMLNN030PASA3 
-
+- [Collection Catalog] (http://sensing.honeywell.com/honeywell-sensing-trustability-ssc-series-standard-accuracy-board-mount-pressure-sensors-50099533-a-en.pdf)
+- [SPI Technical Notes] (http://sensing.honeywell.com/spi-comms-digital-ouptu-pressure-sensors-tn-008202-3-en-final-30may12.pdf)
+- [I2C Technical Notes] (http://sensing.honeywell.com/i2c-comms-digital-output-pressure-sensors-tn-008201-3-en-final-30may12.pdf)
+ 
 __Currently, this library only supports SPI, but I2C and Analog functionality is forthcoming!__
 
 ## Functions
