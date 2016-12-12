@@ -8,7 +8,8 @@
 #define HPS_h
 
 #include "Arduino.h"
-
+#include <SPI.h>
+	
 class HPS {
 public:
 private:
