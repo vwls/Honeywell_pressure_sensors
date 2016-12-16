@@ -31,6 +31,8 @@ Honeywell_pressure_sensors hps(1); // cs is pin 1
 
 void setup(){
     Serial.begin(9600);
+    SPI.begin();
+    SPI.beginTransaction(SPISettings(800000, MSBFIRST, SPI_MODE0));
 }
 
 void loop(){
