@@ -48,19 +48,18 @@ void HPS::getStatus(){
 float HPS::transferFunction(uint16_t dataIn) {
     float outputMax = 16384.0; // 2 to the 14th power (from sensor's data sheet)
     float outputMin = 0.0;
-	float pressureMax = 30.0; // max 30 psi (from sensor's datea sheet)
-	float pressureMin = 0.0;
-	float pressure = 0.0;
-	// from data sheet "output" in this case, is passed as dataIn
+    float pressureMax = 30.0; // max 30 psi (from sensor's datea sheet)
+    float pressureMin = 0.0;
+    float pressure = 0.0;
+    // from data sheet "output" in this case, is passed as dataIn
 
-	// transfer function: using sensor output to solve for pressure
-	pressure = (dataIn - outputMin) * (pressureMax - pressureMin) / (outputMax - outputMin);
-	pressure = pressure + pressureMin;
+    // transfer function: using sensor output to solve for pressure
+    pressure = (dataIn - outputMin) * (pressureMax - pressureMin) / (outputMax - outputMin);
+    pressure = pressure + pressureMin;
 
-	psiOutput = pressure;
-	Serial.print(psiOutput);
-	return (psiOutput);
-
+    psiOutput = pressure;
+    Serial.print(psiOutput);
+    return (psiOutput);
 }
 
 
