@@ -18,6 +18,7 @@ public:
 	void getStatus();
 private:
 	int _pin;
+	void transferFunction();
 };
 
 #endif
