@@ -17,6 +17,7 @@ public:
 	void readTemperature();
 	void getStatus();
 private:
+	int _pin;
 };
 
 #endif
