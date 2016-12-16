@@ -10,10 +10,13 @@
 
 HPS::HPS(int pin) {
     pinMode(pin, OUTPUT);
+    digitalWrite(pin, HIGH);
     _pin = pin;
 }
 
-void HPS::readPressure(pin) {
+void HPS::readPressure(int whichChip) {
+    whichChip = pin;
+
     byte firstByte;
     byte secondByte;
 
