@@ -33,7 +33,6 @@ void HPS::readPressure(int whichChip) {
 
     // de-asserting this sensor by bringing CS pin high
     digitalWrite(whichChip, HIGH);
-    //return (combinedInts);
     return (bothBytes);
 }
 
@@ -51,7 +50,6 @@ float HPS::transferFunction(uint16_t dataIn) {
     float pressureMax = 30.0; // max 30 psi (from sensor's datea sheet)
     float pressureMin = 0.0;
     float pressure = 0.0;
-    // from data sheet "output" in this case, is passed as dataIn
 
     // transfer function: using sensor output to solve for pressure
     pressure = (dataIn - outputMin) * (pressureMax - pressureMin) / (outputMax - outputMin);
