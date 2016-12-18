@@ -1,6 +1,6 @@
 /*
 	Arduino library for Honeywell pressure sensors
-	Currently just supporting SPI sensors. I2c and Analog to come.
+	SPI Models supported, I2C and Analog support to come
 	Fletcher Bach - Dec. 2016
 	MIT license
 */
