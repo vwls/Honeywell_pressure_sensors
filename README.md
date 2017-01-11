@@ -27,7 +27,7 @@ TruStability SPI pressure sensor SSCMLNN030PASA3
 
 #include <Honeywell_pressure_sensors.h>
 
-Honeywell_pressure_sensors hps(1); // cs is pin 1
+HPS hps(1); // cs is pin 1
 
 void setup(){
     Serial.begin(9600);
