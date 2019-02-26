@@ -7,6 +7,7 @@
 
 #include "Arduino.h"
 #include "Honeywell_pressure_sensors.h"
+#include <SPI.h>
 
 HPS::HPS(int pin) {
     pinMode(pin, OUTPUT);
@@ -14,8 +15,8 @@ HPS::HPS(int pin) {
     _pin = pin;
 }
 
-void HPS::readPressure(int whichChip) {
-    whichChip = pin;
+float HPS::readPressure() {
+    int whichChip = _pin;
 
     byte firstByte;
     byte secondByte;
@@ -29,11 +30,12 @@ void HPS::readPressure(int whichChip) {
 
     // here we're bitshifting the first byte 8 bits to the left
     uint16_t bothBytes = (firstByte << 8) | secondByte;
-    transferFunction(bothBytes);
+    float psiOutput = transferFunction(bothBytes);
 
     // de-asserting this sensor by bringing CS pin high
     digitalWrite(whichChip, HIGH);
-    return (bothBytes);
+    //return (bothBytes);
+    return psiOutput;
 }
 
 void HPS::readTemperature(){
@@ -55,9 +57,8 @@ float HPS::transferFunction(uint16_t dataIn) {
     pressure = (dataIn - outputMin) * (pressureMax - pressureMin) / (outputMax - outputMin);
     pressure = pressure + pressureMin;
 
-    psiOutput = pressure;
-    Serial.print(psiOutput);
-    return (psiOutput);
+    Serial.print(pressure);
+    return (pressure);
 }
 
 
