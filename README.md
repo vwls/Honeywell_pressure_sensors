@@ -38,6 +38,7 @@ void setup(){
 
 void loop(){
     Serial.println(hps.readPressure());
+    delay(500);
 }
 ```
 
