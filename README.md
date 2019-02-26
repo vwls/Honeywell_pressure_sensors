@@ -22,10 +22,11 @@ The following example programs demonstrate how to use the library.
 ```cpp
 /*
 This program gets pressure readings from Honeywell's 
-TruStability SPI pressure sensor SSCMLNN030PASA3   
+TruStability SPI pressure sensor. Was tested with SSCMLNN030PASA3 and  HSCDRRN015PDSA5
 */
 
 #include <Honeywell_pressure_sensors.h>
+#include <SPI.h>
 
 HPS hps(1); // cs is pin 1
 
@@ -36,7 +37,8 @@ void setup(){
 }
 
 void loop(){
-    hps.readPressure();
+    Serial.println(hps.readPressure());
+    delay(500);
 }
 ```
 

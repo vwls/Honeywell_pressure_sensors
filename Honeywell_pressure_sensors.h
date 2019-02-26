@@ -13,12 +13,12 @@
 class HPS {
 public:
 	HPS(int pin);
-	void readPressure();
+	float readPressure();
 	void readTemperature();
 	void getStatus();
 private:
 	int _pin;
-	void transferFunction();
+	float transferFunction(uint16_t);
 };
 
 #endif
