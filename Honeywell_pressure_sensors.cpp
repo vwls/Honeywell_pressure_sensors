@@ -57,7 +57,7 @@ float HPS::transferFunction(uint16_t dataIn) {
     pressure = (dataIn - _outputMin) * (_pressureMax - _pressureMin) / (_outputMax - _outputMin);
     pressure = pressure + _pressureMin;
 
-    Serial.print(pressure);
+    //Serial.print(pressure);
     return (pressure);
 }
 
