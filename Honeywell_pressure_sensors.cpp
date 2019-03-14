@@ -9,10 +9,14 @@
 #include "Honeywell_pressure_sensors.h"
 #include <SPI.h>
 
-HPS::HPS(int pin) {
+HPS::HPS(int pin, float outputMax, float outputMin, float pressureMax, float pressureMin) {
     pinMode(pin, OUTPUT);
     digitalWrite(pin, HIGH);
-    _pin = pin;
+    _pin         = pin;
+    _outputMax   = outputMax; // 2 to the 14th power (from sensor's data sheet)
+    _outputMin   = outputMin;
+    _pressureMax = pressureMax; // max 30 psi (from sensor's datea sheet)
+    _pressureMin = pressureMin;
 }
 
 float HPS::readPressure() {
@@ -47,17 +51,13 @@ void HPS::getStatus(){
 }
 
 float HPS::transferFunction(uint16_t dataIn) {
-    float outputMax = 16384.0; // 2 to the 14th power (from sensor's data sheet)
-    float outputMin = 0.0;
-    float pressureMax = 30.0; // max 30 psi (from sensor's datea sheet)
-    float pressureMin = 0.0;
     float pressure = 0.0;
 
     // transfer function: using sensor output to solve for pressure
-    pressure = (dataIn - outputMin) * (pressureMax - pressureMin) / (outputMax - outputMin);
-    pressure = pressure + pressureMin;
+    pressure = (dataIn - _outputMin) * (_pressureMax - _pressureMin) / (_outputMax - _outputMin);
+    pressure = pressure + _pressureMin;
 
-    Serial.print(pressure);
+    //Serial.print(pressure);
     return (pressure);
 }
 
