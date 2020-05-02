@@ -8,6 +8,7 @@ The ABP Series are piezoresistive silicon pressure sensors offering a ratiometri
 
 * [Datasheet ABP series](https://datasheet.octopart.com/ABPDJJT001PGAA5-Honeywell-datasheet-136608874.pdf)
 * [SPI Technical Notes](https://sensing.honeywell.com/spi-comms-digital-ouptu-pressure-sensors-tn-008202-3-en-final-30may12.pdf)
+* [Installation instructions](https://sensing.honeywell.com/honeywell-sensing-basic-board-mount-pressure-abp-series-installation-instructions-32305127-D-EN)
 
 ### software required 
 
